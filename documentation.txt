@@ -1,0 +1,27 @@
+CI/CD DOCUMENTATION : 
+
+Credentials to connect Server : 
+
+ssh ip 143.0.5.21
+user : am
+passwd : logix@123
+
+// Every User have their own credentials to connect and create demo for cicd
+
+connect via command :   ssh am@143.0.5.21
+
+
+STEPS To Create CI/CD
+
+1. Create Github Repositray or create basic code and add to github repo
+2. Create GitHub Workflow file from GitHub actions and push to commit.
+3. Take pull in local code filebase.
+4. Create Runner file in GitHub actions.
+5. Add nodejs , pm2 , github in server 
+
+CI/CD : 
+
+Reference PPT's
+https://www.slideshare.net/slideshow/cicd-with-github-actions-243975361/243975361#6
+https://www.slideshare.net/slideshow/introduction-to-cicd-251146777/251146777#4
+
