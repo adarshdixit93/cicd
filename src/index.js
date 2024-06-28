@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to backend server" });
+  res.json({ status:200,message: "Welcome to backend server" });
 });
 
 app.use("/api", mainRoute);
