@@ -17,14 +17,32 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    
-    - run: npm ci
-    
-    - run: npm run build --if-present
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - run: npm ci
+
+      - run: npm run build --if-present
+
+      - name: Install PM2 globally (if not already installed)
+        run: |
+          if [ ! -x "$(command -v pm2)" ]; then
+            npm install pm2@latest -g
+          fi
+
+      - name: Start your Node.js application using PM2
+        run: |
+          # Replace 'your-app-start-script' with the actual script to start your application
+          pm2 start ./src/index.js
+
+      - name: (Optional) Restart the server with PM2 on push (be cautious with this step)
+        if: github.event_name == 'push'  # Only run on push events
+        run: |
+          pm2 restart all  # Restarts all running PM2 processes
+          # Alternatively, for a specific application:
+          # pm2 restart 
