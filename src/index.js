@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-  console.log("checkin....")
+  console.log("checkingggg....")
   res.json({ status:200,message: "Welcome to backend server" });
 });
 
