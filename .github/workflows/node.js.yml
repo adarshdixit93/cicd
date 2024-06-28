@@ -39,5 +39,5 @@ jobs:
     
     - name: Restart pm2 process
       run: |
-        pm2 restart all || pm2 start your-app.js
+        pm2 restart all || pm2 start index.js
         pm2 save
