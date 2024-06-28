@@ -29,7 +29,7 @@ jobs:
       - run: npm run build --if-present
       - name: Check for PM2 and Install if Not Present
         run: |
-          if ! npm list -g pm2; then
+          if ! command -v pm2 > /dev/null; then
             npm install -g pm2
           fi
 
