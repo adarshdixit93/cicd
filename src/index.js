@@ -14,7 +14,7 @@ app.use(cors());
 
 app.get("/", (req, res) => {
   console.log("------checkingggg....")
-  res.json({ status:200,message: "Welcome to backend server" });
+  res.json({ status:200,message: "Welcome to backend server session check" });
 });
 
 app.use("/api", mainRoute);
